@@ -11,9 +11,22 @@
 
   firebase.initializeApp(firebaseConfig);
 
-  function addAnItem(){
+  function addItem(){
     var item = document.getElementById("inputs").value;
     firebase.database().ref("/").child(item).update({
         purpose:"YAY",
     });
+    firebase.database().ref("/").on("value",function(snapshot){
+        document.getElementById("outputs").innerHTML = "";
+        snapshot.forEach(function(childSnapshot){
+            childKey = childSnapshot.key;
+            item = childKey;
+            createTag = "<p>"+item+"</p>"
+            document.getElementById("outputs").innerHTML += createTag;
+        })
+    })
+  }
+  function killItem(){
+    killed_item = document.getElementById("inputs").value;
+    firebase.database().ref("/").child(killed_item).remove();
   }
