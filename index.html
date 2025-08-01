@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shopping List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
@@ -17,12 +20,11 @@
 <body>
 <h1>Shopping List</h1>
 <input id="inputs">
-<button onclick="addAnItem()">Add Item</button>
-<button>Remove Item</button>
+<br><br>
+<button onclick="addItem()">Add Item</button>
+<button onclick="killItem()">Remove Item</button>
 <div id="outputs">
-
 </div>
-
 </body>
 
 </html>
